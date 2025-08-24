@@ -2,7 +2,21 @@
 .project-card {
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);<nav>
+    <ul>
+        <li><a href="#home">خانه</a></li>
+        <li><a href="#projects">پروژه‌ها</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#contact">تماس با ما</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <section id="home" class="hero-section">
+        <h2>فرصت‌های بی‌نظیر پیش‌خرید ملک در مشهد</h2>
+        <p>با ما بهترین پروژه‌های مسکونی و تجاری را قبل از اتمام ساخت کشف کنید.</p>
+        <a href="#projects" class="btn">مشاهده پروژه‌ها</a>
+    </section>
             overflow: hidden;
             text-align: center;
             transition: transform 0.3s ease;
