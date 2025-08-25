@@ -1,0 +1,133 @@
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+</body>
+</html>
+"""
+
+with open('arbabsaze/css/style.css', 'w', encoding='utf-8') as f:
+    f.write(css_content)
+
+with open('arbabsaze/index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+import shutil
+shutil.make_archive('/mnt/data/arbabsaze_site', 'zip', 'arbabsaze')import os
+
+# ایجاد ساختار پوشه‌ها برای پروژه Arbab Saze
+folders = [
+    'arbabsaze/css',
+    'arbabsaze/js',
+    'arbabsaze/images'
+]
+for folder in folders:
+    os.makedirs(folder, exist_ok=True)
+
+# محتوای CSS پایه با رنگ آبی تیره و طلایی
+css_content = """
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #222;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(5, 23, 50, 0.8);
+    color: white;
+    z-index: 1000;
+}
+header a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+header a:hover {
+    color: white;
+}
+.btn-custom {
+    background-color: #d4af37;
+    color: #051732;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+.btn-custom:hover {
+    background-color: #b98d28;
+    color: white;
+}
+"""
+
+# محتوای HTML نمونه صفحه اصلی
+html_content = """
+<!DOCTYPE html>
+<html lang=\"fa\" dir=\"rtl\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Arbab Saze - مشهد</title>
+    <link href=\"css/style.css\" rel=\"stylesheet\">
+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css\" rel=\"stylesheet\">
+</head>
+<body>
+    <header class=\"p-3 d-flex justify-content-between\">
+        <h1>Arbab Saze</h1>
+        <nav>
+            <a href=\"#projects\">پروژه‌ها</a>
+            <a href=\"#benefits\">مزایا</a>
+            <a href=\"#contact\">تماس</a>
+        </nav>
+    </header>
+
+    <section class=\"p-5 text-center\" style=\"margin-top:80px; background:#051732; color:white;\">
+        <h2>زندگی لوکس در قلب مشهد</h2>
+        <p>پروژه‌های برتر در الهیه، قاسم‌آباد و بلوار سجاد</p>
+        <a class=\"btn btn-custom\" href=\"#projects\">مشاهده پروژه‌ها</a>
+    </section>
+
+    <section id=\"projects\" class=\"container my-5\">
+        <h3 class=\"text-center mb-4\">پروژه‌های Arbab Saze</h3>
+        <div class=\"row\">
+            <div class=\"col-md-4\">
+                <img src=\"images/project1.jpg\" class=\"img-fluid\" alt=\"پروژه الهیه مشهد\">
+                <h5 class=\"mt-2\">رزیدنس الهیه</h5>
+                <p>واحدهای لوکس ۷۰ تا ۱۲۰ متری با دید کامل شهر</p>
+            </div>
+            <div class=\"col-md-4\">
+                <img src=\"images/project2.jpg\" class=\"img-fluid\" alt=\"پروژه قاسم‌آباد مشهد\">
+                <h5 class=\"mt-2\">برج قاسم‌آباد</h5>
+                <p>برج ۲۰ طبقه با امکانات کامل هتلینگ</p>
+            </div>
+            <div class=\"col-md-4\">
+                <img src=\"images/project3.jpg\" class=\"img-fluid\" alt=\"پروژه بلوار سجاد مشهد\">
+                <h5 class=\"mt-2\">مجتمع لوکس بلوار سجاد</h5>
+                <p>دسترسی عالی به قلب تجاری مشهد</p>
+            </div>
+        </div>
+    </section>
+
+    <section id=\"contact\" class=\"p-5 bg-light\">
+        <div class=\"container\">
+            <h3 class=\"text-center mb-4\">تماس با ما</h3>
+            <div class=\"row\">
+                <div class=\"col-md-6\">
+                    <form>
+                        <input type=\"text\" class=\"form-control mb-3\" placeholder=\"نام\">
+                        <input type=\"email\" class=\"form-control mb-3\" placeholder=\"ایمیل\">
+                        <textarea class=\"form-control mb-3\" placeholder=\"پیام شما\"></textarea>
+                        <button type=\"submit\" class=\"btn btn-custom\">ارسال</button>
+                    </form>
+                </div>
+                <div class=\"col-md-6\">
+                    <iframe src=\"https://www.google.com/maps?q=35.830029,50.998372&hl=fa&z=14&output=embed\" width=\"100%\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class=\"p-3 text-center\" style=\"background:#051732; color:white;\">
+        کلیه حقوق محفوظ است © Arbab Saze - مشهد
+    </footer>
